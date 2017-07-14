@@ -10,7 +10,7 @@ namespace BankAccount
     {
         static void Main(string[] args)
         {
-
+            Client oswaldCopplepot = new Client("Oswald Cobblepot", "2531 Adams ST\nGotham City, New Jersey 51335");
             //You will be designing a console application to manage a client’s bank account.
             //For now, the application will have only one client that is hard - coded into the system.
             //The client has one checking account and one savings account.
