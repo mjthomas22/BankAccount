@@ -16,6 +16,7 @@ namespace BankAccount
             string firstChoice;
             string secondChoice;
             double deposit;
+            double withdraw;
 
             do
             {
@@ -90,13 +91,21 @@ namespace BankAccount
                             deposit = double.Parse(Console.ReadLine());
                             oswaldChecking.Balance = oswaldChecking.Deposit(deposit);
                             Console.WriteLine("Your new balance is {0}", oswaldChecking.Balance);
-
+                            Console.WriteLine("Press enter to continue");
+                            Console.ReadLine();
+                            Console.Clear();
 
                         }
 
                         if (secondChoice == "2")
                         {
-                            Console.WriteLine("Your savings account balance is {0}", oswaldSavings.Balance);
+                            Console.WriteLine("How much would you like to deposit?");
+                            deposit = double.Parse(Console.ReadLine());
+                            oswaldSavings.Balance = oswaldSavings.Deposit(deposit);
+                            Console.WriteLine("Your new balance is {0}", oswaldSavings.Balance);
+                            Console.WriteLine("Press enter to continue");
+                            Console.ReadLine();
+                            Console.Clear();
                         }
 
                         if (secondChoice == "3")
@@ -112,8 +121,56 @@ namespace BankAccount
 
                     } while (secondChoice != "1" || secondChoice != "2" || secondChoice != "3" || secondChoice != "4");
 
+
                 }
 
+                if (firstChoice == "4")
+                {
+                    do
+                    {
+
+                        Console.WriteLine("In which account would you like to make a withdraw?\n1. Checking Account\n2. Savings Account\n3. Back\n4. Exit");
+                        secondChoice = Console.ReadLine();
+                        Console.Clear();
+
+                        if (secondChoice == "1")
+                        {
+                            Console.WriteLine("How much would you like to withdraw?");
+                            withdraw = double.Parse(Console.ReadLine());
+                            oswaldChecking.Balance = oswaldChecking.Withdraw(withdraw);
+                            Console.WriteLine("Your new balance is {0}", oswaldChecking.Balance);
+                            Console.WriteLine("Press enter to continue");
+                            Console.ReadLine();
+                            Console.Clear();
+
+                        }
+
+                        if (secondChoice == "2")
+                        {
+                            Console.WriteLine("How much would you like to withdraw?");
+                            withdraw = double.Parse(Console.ReadLine());
+                            oswaldSavings.Balance = oswaldSavings.Withdraw(withdraw);
+                            Console.WriteLine("Your new balance is {0}", oswaldSavings.Balance);
+                            Console.WriteLine("Press enter to continue");
+                            Console.ReadLine();
+                            Console.Clear();
+                        }
+
+                        if (secondChoice == "3")
+                        {
+                            break;
+                        }
+
+                        if (secondChoice == "4")
+                        {
+                            firstChoice = "5";
+                            break;
+                        }
+
+                    } while (secondChoice != "1" || secondChoice != "2" || secondChoice != "3" || secondChoice != "4");
+
+
+                }
 
 
 

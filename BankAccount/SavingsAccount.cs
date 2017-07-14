@@ -18,12 +18,12 @@ namespace BankAccount
         }
         public override double Deposit(double deposit)
         {
-            throw new NotImplementedException();
+            return deposit += Balance;
         }
         
-        public override void Withdraw()
+        public override double Withdraw(double withdraw)
         {
-            throw new NotImplementedException();
+            return Balance -= withdraw;
         }
     }
 }

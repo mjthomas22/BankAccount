@@ -22,9 +22,9 @@ namespace BankAccount
            return deposit += Balance;
         }
 
-        public override void Withdraw()
+        public override double Withdraw(double withdraw)
         {
-            throw new NotImplementedException();
+            return Balance -= withdraw;
         }
     }
 }

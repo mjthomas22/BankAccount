@@ -8,7 +8,7 @@ namespace BankAccount
 {
     abstract class Account
     {
-        public abstract void Withdraw();
+        public abstract double Withdraw(double withdraw);
 
         public abstract double Deposit(double deposit);
 
