@@ -8,7 +8,7 @@ namespace BankAccount
 {
     class SavingsAccount : Account
     {
-        private double balance = 5000;
+        private double balance = 15000;
 
 
         public double Balance
@@ -16,7 +16,7 @@ namespace BankAccount
             get { return this.balance; }
             set { this.balance = value; }
         }
-        public override void Deposit()
+        public override double Deposit(double deposit)
         {
             throw new NotImplementedException();
         }

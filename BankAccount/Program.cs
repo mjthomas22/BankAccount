@@ -15,10 +15,11 @@ namespace BankAccount
             SavingsAccount oswaldSavings = new SavingsAccount();
             string firstChoice;
             string secondChoice;
+            double deposit;
 
             do
             {
-                
+
                 //You will be designing a console application to manage a client’s bank account.
                 //For now, the application will have only one client that is hard - coded into the system.
                 //The client has one checking account and one savings account.
@@ -27,25 +28,96 @@ namespace BankAccount
                 Console.WriteLine("Please make a selection from the following menu.\n");
                 Console.WriteLine("1. View Client Information\n2. View Account Balance\n3. Deposit Funds\n4. Withdraw Funds\n5. Exit\nPlease enter the number of your choice");
                 firstChoice = Console.ReadLine();
+                Console.Clear();
 
 
                 if (firstChoice == "1")
                 {
-                    Console.WriteLine("Name : {0}\nAddress : {1}\nAccount Number : {2}", oswaldCobblepot.Name, oswaldCobblepot.Address, oswaldCobblepot.AccountNumber);
+
+                    oswaldCobblepot.Info();
+                    Console.WriteLine("Press enter when done");
+                    Console.ReadLine();
+                    Console.Clear();
                 }
+
+
                 if (firstChoice == "2")
                 {
-                    Console.WriteLine("1. Checking Account Balance\n2. Savings Account Balance\n3. Exit");
-                    secondChoice = Console.ReadLine();
-                    if (secondChoice == "1")
+                    do
                     {
-                        Console.WriteLine("Your checking account balance is {0}", oswaldChecking.Balance);
-                    }
-                    if (secondChoice == "2")
-                    {
-                        Console.WriteLine("Your savings account balance is {0}",oswaldSavings.Balance);
-                    }
+
+                        Console.WriteLine("1. Checking Account Balance\n2. Savings Account Balance\n3. Back\n4. Exit");
+                        secondChoice = Console.ReadLine();
+                        Console.Clear();
+
+                        if (secondChoice == "1")
+                        {
+                            Console.WriteLine("Your checking account balance is {0}", oswaldChecking.Balance);
+                        }
+
+                        if (secondChoice == "2")
+                        {
+                            Console.WriteLine("Your savings account balance is {0}", oswaldSavings.Balance);
+                        }
+
+                        if (secondChoice == "3")
+                        {
+                            break;
+                        }
+
+                        if (secondChoice == "4")
+                        {
+                            firstChoice = "5";
+                            break;
+                        }
+
+                    } while (secondChoice != "1" || secondChoice != "2" || secondChoice != "3" || secondChoice != "4");
                 }
+
+
+                if (firstChoice == "3")
+                {
+                    do
+                    {
+
+                        Console.WriteLine("In which account would you like to make a deposit?\n1. Checking Account\n2. Savings Account\n3. Back\n4. Exit");
+                        secondChoice = Console.ReadLine();
+                        Console.Clear();
+
+                        if (secondChoice == "1")
+                        {
+                            Console.WriteLine("How much would you like to deposit?");
+                            deposit = double.Parse(Console.ReadLine());
+                            oswaldChecking.Balance = oswaldChecking.Deposit(deposit);
+                            Console.WriteLine("Your new balance is {0}", oswaldChecking.Balance);
+
+
+                        }
+
+                        if (secondChoice == "2")
+                        {
+                            Console.WriteLine("Your savings account balance is {0}", oswaldSavings.Balance);
+                        }
+
+                        if (secondChoice == "3")
+                        {
+                            break;
+                        }
+
+                        if (secondChoice == "4")
+                        {
+                            firstChoice = "5";
+                            break;
+                        }
+
+                    } while (secondChoice != "1" || secondChoice != "2" || secondChoice != "3" || secondChoice != "4");
+
+                }
+
+
+
+
+
             } while (firstChoice != "5");
 
 

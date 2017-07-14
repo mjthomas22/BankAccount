@@ -10,7 +10,7 @@ namespace BankAccount
     {
         public abstract void Withdraw();
 
-        public abstract void Deposit();
+        public abstract double Deposit(double deposit);
 
        
 

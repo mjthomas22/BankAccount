@@ -17,9 +17,9 @@ namespace BankAccount
             set { this.balance = value; }
         }
         
-        public override void Deposit()
+        public override double Deposit(double deposit)
         {
-            throw new NotImplementedException();
+           return deposit += Balance;
         }
 
         public override void Withdraw()

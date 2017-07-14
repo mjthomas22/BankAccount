@@ -43,7 +43,7 @@ namespace BankAccount
         // 1 method
         public void Info()
         {
-            Console.WriteLine("{0}\n{1}\n{3}\n", name, address, accountNumber);
+            Console.WriteLine("Name : {0}\nAddres : {1}\nAccount Number : {2}\n", name, address, accountNumber);
         }
         // Client information should be filled in here
     }
