@@ -10,16 +10,46 @@ namespace BankAccount
     {
         static void Main(string[] args)
         {
-            Client oswaldCopplepot = new Client("Oswald Cobblepot", "2531 Adams ST\nGotham City, New Jersey 51335");
-            //You will be designing a console application to manage a client’s bank account.
-            //For now, the application will have only one client that is hard - coded into the system.
-            //The client has one checking account and one savings account.
-            Console.WriteLine("Welcome to Gotham National Bank");
-            //Menu Items
-            Console.WriteLine("Please make a selection from the following menu.\n");
-            Console.WriteLine("1. View Client Information\n2. View Account Balance\n3. Deposit Funds\n4. Withdraw Funds\n5. Exit");
+            Client oswaldCobblepot = new Client();
+            CheckingAccount oswaldChecking = new CheckingAccount();
+            SavingsAccount oswaldSavings = new SavingsAccount();
+            string firstChoice;
+            string secondChoice;
 
+            do
+            {
                 
+                //You will be designing a console application to manage a client’s bank account.
+                //For now, the application will have only one client that is hard - coded into the system.
+                //The client has one checking account and one savings account.
+                Console.WriteLine("Welcome to Gotham National Bank");
+                //Menu Items
+                Console.WriteLine("Please make a selection from the following menu.\n");
+                Console.WriteLine("1. View Client Information\n2. View Account Balance\n3. Deposit Funds\n4. Withdraw Funds\n5. Exit\nPlease enter the number of your choice");
+                firstChoice = Console.ReadLine();
+
+
+                if (firstChoice == "1")
+                {
+                    Console.WriteLine("Name : {0}\nAddress : {1}\nAccount Number : {2}", oswaldCobblepot.Name, oswaldCobblepot.Address, oswaldCobblepot.AccountNumber);
+                }
+                if (firstChoice == "2")
+                {
+                    Console.WriteLine("1. Checking Account Balance\n2. Savings Account Balance\n3. Exit");
+                    secondChoice = Console.ReadLine();
+                    if (secondChoice == "1")
+                    {
+                        Console.WriteLine("Your checking account balance is {0}", oswaldChecking.Balance);
+                    }
+                    if (secondChoice == "2")
+                    {
+                        Console.WriteLine("Your savings account balance is {0}",oswaldSavings.Balance);
+                    }
+                }
+            } while (firstChoice != "5");
+
+
+
             //You must include a functional menu that includes the following choices for the user.
             //- [ ] View Client Information
             //- [ ] View Account Balance
@@ -103,6 +133,8 @@ namespace BankAccount
             //You can choose any starting balance to begin the program.
 
             //Think about what data type should be used for dealing with money.
+
+
         }
     }
 }

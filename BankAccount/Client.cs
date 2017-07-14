@@ -8,32 +8,43 @@ namespace BankAccount
 {
     class Client
     {
-        protected string name;
-        protected string address;
-        protected int accountNumber;
-        Random randomNumber = new Random();
+        protected string name = "Oswald Cobblepot";
+        protected string address = "2531 Adams ST, Gotham City, New Jersey 51335";
+        protected int accountNumber = 548321;
+
         public string Name
-        { get; }
+        {
+            get { return this.name; }
+        }
 
         public string Address
-        { get; set; }
+        {
+            get { return this.address; }
+            set { this.address = value; }
+        }
 
         public int AccountNumber
-        { get; }
+        {
+            get { return this.accountNumber; }
+        }
 
         public Client()
         {
 
         }
 
-        public Client(string name, string address)
+        public Client(string name, string address, int accountNumber)
         {
             this.name = name;
             this.address = address;
-            accountNumber = randomNumber.Next(100000, 999999);
+            this.accountNumber = accountNumber;
+
         }
         // 1 method
-        
+        public void Info()
+        {
+            Console.WriteLine("{0}\n{1}\n{3}\n", name, address, accountNumber);
+        }
         // Client information should be filled in here
     }
 }
