@@ -8,10 +8,10 @@ namespace BankAccount
 {
     class Client
     {
-        protected string name = "Oswald Cobblepot";
-        protected string address = "2531 Adams ST, Gotham City, New Jersey 51335";
-        protected int accountNumber = 548321;
-
+        private string name = "Oswald Cobblepot";
+        private string address = "2531 Adams ST, Gotham City, New Jersey 51335";
+        private int checkingAccountNumber = 548321;
+        private int savingsAccountNumber = 568215;
         public string Name
         {
             get { return this.name; }
@@ -23,27 +23,31 @@ namespace BankAccount
             set { this.address = value; }
         }
 
-        public int AccountNumber
+        public int CheckingAccountNumber
         {
-            get { return this.accountNumber; }
+            get { return this.checkingAccountNumber; }
         }
 
+        public int SavingsAccountNumber
+        {
+            get { return this.savingsAccountNumber; }
+        }
         public Client()
         {
 
         }
 
-        public Client(string name, string address, int accountNumber)
+        public Client(string name, string address)
         {
             this.name = name;
             this.address = address;
-            this.accountNumber = accountNumber;
+            
 
         }
         // 1 method
         public void Info()
         {
-            Console.WriteLine("Name : {0}\nAddres : {1}\nAccount Number : {2}\n", name, address, accountNumber);
+            Console.WriteLine("Name : {0}\nAddres : {1}\n", name, address );
         }
         // Client information should be filled in here
     }
