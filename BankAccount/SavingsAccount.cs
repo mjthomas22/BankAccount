@@ -34,7 +34,7 @@ namespace BankAccount
             this.accountNumber = accountNumber;
         }
 
-
+        //Methods to deposit/withdraw and get balance
         public override double Deposit(double deposit)
         {
             return deposit += Balance;
@@ -42,6 +42,10 @@ namespace BankAccount
         public override double Withdraw(double withdraw)
         {
             return Balance -= withdraw;
+        }
+        public override void GetBalance()
+        {
+            Console.WriteLine(balance.ToString("C"));
         }
     }
 }

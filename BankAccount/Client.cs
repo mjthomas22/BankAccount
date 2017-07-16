@@ -8,6 +8,7 @@ namespace BankAccount
 {
     class Client
     {
+        //Clients information
         private string name = "Oswald Cobblepot";
         private string address = "2531 Adams ST, Gotham City, New Jersey 51335";
         private int checkingAccountNumber = 548321;
@@ -47,7 +48,7 @@ namespace BankAccount
         // 1 method
         public void Info()
         {
-            Console.WriteLine("Name : {0}\nAddres : {1}\n", name, address );
+            Console.WriteLine("Name : {0}\nAddress : {1}\n", name, address );
         }
         // Client information should be filled in here
     }

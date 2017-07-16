@@ -20,7 +20,6 @@ namespace BankAccount
             double deposit;
             double withdraw;
 
-
             do
             {
                 // Welcome user and give them the menu to make their choices.
@@ -52,12 +51,14 @@ namespace BankAccount
 
                         if (secondChoice == "1")
                         {
-                            Console.WriteLine("Your checking account balance is {0}", oswaldChecking.Balance);
+                            Console.WriteLine("Your checking account balance is :");
+                            oswaldChecking.GetBalance();
                         }
 
                         if (secondChoice == "2")
                         {
-                            Console.WriteLine("Your savings account balance is {0}", oswaldSavings.Balance);
+                            Console.WriteLine("Your savings account balance is :");
+                            oswaldSavings.GetBalance();
                         }
 
                         if (secondChoice == "3")
@@ -89,7 +90,8 @@ namespace BankAccount
                             Console.WriteLine("How much would you like to deposit?");
                             deposit = double.Parse(Console.ReadLine());
                             oswaldChecking.Balance = oswaldChecking.Deposit(deposit);
-                            Console.WriteLine("Your new balance is {0}", oswaldChecking.Balance);
+                            Console.WriteLine("Your new balance is ");
+                            oswaldChecking.GetBalance();
                             Console.WriteLine("Press enter to continue");
                             Console.ReadLine();
                             Console.Clear();
@@ -101,7 +103,8 @@ namespace BankAccount
                             Console.WriteLine("How much would you like to deposit?");
                             deposit = double.Parse(Console.ReadLine());
                             oswaldSavings.Balance = oswaldSavings.Deposit(deposit);
-                            Console.WriteLine("Your new balance is {0}", oswaldSavings.Balance);
+                            Console.WriteLine("Your new balance is ");
+                            oswaldSavings.GetBalance();
                             Console.WriteLine("Press enter to continue");
                             Console.ReadLine();
                             Console.Clear();
@@ -138,7 +141,8 @@ namespace BankAccount
                             Console.WriteLine("How much would you like to withdraw?");
                             withdraw = double.Parse(Console.ReadLine());
                             oswaldChecking.Balance = oswaldChecking.Withdraw(withdraw);
-                            Console.WriteLine("Your new balance is {0}", oswaldChecking.Balance);
+                            Console.WriteLine("Your new balance is ");
+                            oswaldChecking.GetBalance();
                             Console.WriteLine("Press enter to continue");
                             Console.ReadLine();
                             Console.Clear();
@@ -160,7 +164,8 @@ namespace BankAccount
                                 break;
                             }
                             oswaldSavings.Balance = oswaldSavings.Withdraw(withdraw);
-                            Console.WriteLine("Your new balance is {0}", oswaldSavings.Balance);
+                            Console.WriteLine("Your new balance is ");
+                            oswaldSavings.GetBalance();
                             Console.WriteLine("Press enter to continue");
                             Console.ReadLine();
                             Console.Clear();
@@ -182,6 +187,7 @@ namespace BankAccount
 
             } while (firstChoice != "5");
 
+            Console.WriteLine("Have a great day!");
         }
     }
 }

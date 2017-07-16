@@ -12,5 +12,10 @@ namespace BankAccount
 
         public abstract double Deposit(double deposit);
         
+        public virtual void GetBalance()
+        {
+
+        }
+
     }
 }
